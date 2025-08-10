@@ -1,0 +1,255 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+:root {
+    --primaria: #7046e5;
+    --secundaria: #c07ced;
+    --escuro: #280f2a;
+    --maisEscuro: #1a0a1c;
+    --claro: #e2e8f0;
+    --vidro: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background-color: var(--escuro);
+    color: var(--claro);
+}
+/* Menu */
+.navegacao {
+    position: fixed;
+    top: 0;
+    background: var(--vidro);
+    width: 100%;
+    z-index: 100;
+    padding: 1.em;
+}
+
+.menu {
+    display: flex;
+    gap: 4em;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    
+}
+
+.menu-link {
+    text-decoration: none;
+    color: var(--claro);
+    font-weight: 500;
+    position: relative;
+    padding: .5em 0;
+}
+
+.menu-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+    transition: width .5s ease-in-out;
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+
+/* Início */
+.inicio {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+}
+.inicio .texto h1 span {
+    color: #d6a4f0;
+}
+.inicio .foto img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 3px solid #d6a4f0;
+}
+
+/* Projetos */
+.projetos {
+    padding: 6em 2em;
+}
+
+.projetos-titulo {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #d6a4f0;
+}
+
+
+.projeto-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--vidro);
+    overflow: hidden;
+    transition: all 0.5 ease;
+    cursor: pointer;
+}
+
+.projeto-card:hover {
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+    transform: translateY(-10px) scale(1.03);
+}
+
+.projetos-caixa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projeto-link {
+    text-decoration: none;
+    color: var(--claro);
+}
+
+.projeto-imagem {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.caixa-textos {
+    padding: 1.5em;
+}
+
+.info-projetos {
+    color: rgba(266, 232, 240, 0.8);
+    line-height: 1.25em;
+    margin-bottom: 7px
+}
+
+.paragrafo-projetos {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+/* Habilidades */
+#habilidades {
+    padding: 40px;
+    background-color: var(--vidro);
+    color: #d6a4f0;
+    max-width: 500px; 
+    margin: auto; 
+    border-radius: 10px;
+    text-align: center;
+     border: 1px solid var(--vidro);
+}
+
+.habilidade {
+    margin-bottom: 20px;
+}
+
+.barra {
+    background: #444;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 20px;
+    width: 80%; 
+    margin: 0 auto; 
+}
+
+.progresso {
+    height: 100%;
+    background: linear-gradient(90deg, #f0b2f0, #cc66ff); 
+    border-radius: 5px;
+}
+
+/* níveis das habilidades */
+.progresso.html { width: 90%; }
+.progresso.css { width: 80%; }
+.progresso.js { width: 60%; }
+
+
+/* Contato */
+.contato {
+    padding: 6em 2em;
+}
+
+.contatos-titulo {
+    text-align: center;
+    color: #c07ced;
+    margin-bottom: 40px;
+}
+
+.contatos-formulario {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2em;
+    border: 1px solid var(--vidro);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    align-items: center;
+   
+}
+
+.campo-form {
+    width: 95%;
+    padding: 1em;
+    border-radius: 8px;
+    border: 1px solid var(--vidro);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--claro);
+    font-size: 1em;
+    outline: none;
+    margin-bottom: 10px;
+
+}
+
+
+.grupo-form {
+    margin-bottom: 20px;
+}
+
+.campo-form:focus {
+    border-color: var(--primaria);
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+}
+
+.botao-form {
+    background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+    color: var(--claro);
+    padding: 1em 2em;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: all 0.5s ease;
+}
+
+.botao-form:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.4);
+}
+
+.particulas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.5;
+    background: radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%),
+        radial-gradient(circle at 80% 30%, var(--secundaria) 0%, transparent 20%),
+        radial-gradient(circle at 50% 70%, var(--primaria) 0%, transparent 20%),
+        var(--maisEscuro)
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Débora Luiza</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div class="particulas"></div>
+
+        
+    <!-- Menu -->
+     <nav class="navegacao">
+    <ul class="menu">
+      <li><a href="#inicio" class="menu-link">Início</a></li>
+      <li><a href="#projetos" class="menu-link">Projetos</a></li>
+      <li><a href="#habilidades" class="menu-link">Habilidades</a></li>
+      <li><a href="#contatos" class="menu-link">Contato</a></li>
+    </ul>
+  </nav>
+
+    <!-- Início -->
+    <section id="inicio" class="inicio">
+        <div class="texto">
+            <h1>Olá, eu sou <span>Débora</span></h1>
+            <h3>Analista de Sistemas | Front-End</h3>
+            
+        </div>
+        <div class="foto">
+            <img src="debora.jpg" alt="Foto de perfil">
+        </div>
+    </section>
+
+    <!-- Projetos -->
+    
+  <section id="projetos" class="projetos">
+    <h2 class="projetos-titulo">Meus Projetos</h2>
+    <div class="projetos-caixa">
+      <div class="projeto-card">
+        <a href="https://debasversion.github.io/debasversion.github.io-TS/" target="_blank" class="projeto-link">
+          <img src="TS.jpg" alt="Interface página inicial" class="projeto-imagem">
+          <div class="caixa-textos">
+            <h3 class="info-projetos">Projeto | Clone Site The Eras Tour</h3>
+            <p class="paragrafo-projetos">Interface da página inicial do site The Eras tour.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="projeto-card">
+        <a href="https://debasversion.github.io/debasversion.github.io-relogio/" target="_blank" class="projeto-link">
+          <img src="relogio.jpg" alt=" Relogio Digital" class="projeto-imagem">
+          <div class="caixa-textos">
+            <h3 class="info-projetos">Relogio Digital </h3>
+            <p class="paragrafo-projetos">Relogio com uma interface simples, codificado a partir do horário de Brasília-DF.</p>
+          </div>
+          
+        </a>
+      </div>
+    </div>
+  </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades" class="habilidades">
+        <h2>Habilidades</h2>
+        <div class="habilidade">
+            <p>HTML</p>
+            <div class="barra"><div class="progresso" style="width: 80%;"></div></div>
+        </div>
+        <div class="habilidade">
+            <p>CSS</p>
+            <div class="barra"><div class="progresso" style="width: 70%;"></div></div>
+        </div>
+        <div class="habilidade">
+            <p>JavaScript</p>
+            <div class="barra"><div class="progresso" style="width: 50%;"></div></div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="contato" id="contatos">
+    <h2 class="contatos-titulo">Entre em Contato</h2>
+    <form class="contatos-formulario" id="formulario" onsubmit="enviarWhats(event)">
+      <div class="grupo-form">
+        <input type="text" placeholder="Nome" class="campo-form" id="nome">
+      </div>
+      <div class="grupo-form">
+        <textarea placeholder="Digite sua Mensagem" class="campo-form" id="mensagem" rows="5"></textarea>
+      </div>
+      <button type="submit" class="botao-form">Enviar WhatsApp</button>
+    </form>
+  </section>
+
+  <script>
+    function enviarWhats(event) {
+      event.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const mensagem = document.getElementById('mensagem').value;
+      const telefone = '5561986543993'; 
+      const texto = `Olá, meu nome é ${nome}. ${mensagem}`;
+      const msgFormatada = encodeURIComponent(texto);
+      const url = `https://api.whatsapp.com/send?phone=${telefone}&text=${msgFormatada}`;
+      window.open(url, '_blank');
+    }
+  </script>
+</body>
+</html>
