@@ -252,4 +252,84 @@ body {
         radial-gradient(circle at 80% 30%, var(--secundaria) 0%, transparent 20%),
         radial-gradient(circle at 50% 70%, var(--primaria) 0%, transparent 20%),
         var(--maisEscuro)
+
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    /* Menu em coluna */
+    .menu {
+        flex-direction: column;
+        gap: 1em;
+        padding: 1em 0;
+    }
+
+    .navegacao {
+        padding: 0.5em;
+    }
+
+    /* Início - empilhar texto e foto */
+    .inicio {
+        flex-direction: column;
+        text-align: center;
+        padding: 2em 1em;
+    }
+
+    .inicio .foto img {
+        width: 180px;
+        height: 180px;
+        margin-top: 1em;
+    }
+
+    /* Projetos */
+    .projetos {
+        padding: 3em 1em;
+    }
+
+    .projetos-caixa {
+        grid-template-columns: 1fr;
+    }
+
+    /* Habilidades */
+    #habilidades {
+        max-width: 100%;
+        padding: 2em 1em;
+    }
+
+    .barra {
+        width: 100%;
+    }
+
+    /* Contato */
+    .contatos-formulario {
+        padding: 1.5em;
+        width: 100%;
+    }
+
+    .campo-form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Texto menor para celulares pequenos */
+    body {
+        font-size: 14px;
+    }
+
+    .menu {
+        gap: 0.5em;
+    }
+
+    .inicio .texto h1 {
+        font-size: 1.5em;
+    }
+
+    .inicio .texto h3 {
+        font-size: 1em;
+    }
+
+    .projeto-imagem {
+        height: 150px;
+    }
 }
